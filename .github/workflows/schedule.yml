@@ -7,6 +7,9 @@ on:
 jobs:
   update-gist:
     runs-on: ubuntu-latest
+    env:
+      # 👇 这一行强制启用 Node.js 24，立刻消除所有报错
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - uses: actions/checkout@master
       - name: Update gist
